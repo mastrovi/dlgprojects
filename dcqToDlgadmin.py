@@ -2,26 +2,6 @@
 from lxml import etree
 
 # --- Dictionaries for reference ---
-rightsDict = {
-    "CC BY":"https://creativecommons.org/licenses/by/4.0",
-    "CC BY-SA":"https://creativecommons.org/licenses/by-sa/4.0",
-    "CC BY-ND":"https://creativecommons.org/licenses/by-nd/4.0",
-    "CC BY-NC":"https://creativecommons.org/licenses/by-nc/4.0",
-    "CC BY-NC-SA":"https://creativecommons.org/licenses/by-nc-sa/4.0",
-    "CC BY-NC-ND":"https://creativecommons.org/licenses/by-nc-nd/4.0",
-    "In Copyright":"http://rightsstatements.org/vocab/InC/1.0/",
-    "In Copyright - EU Orphan Work":"http://rightsstatements.org/vocab/InC-OW-EU/1.0/",
-    "In Copyright - Educational Use Permitted":"http://rightsstatements.org/vocab/InC-EDU/1.0/",
-    "In Copyright - Non-Commercial Use Permitted":"http://rightsstatements.org/vocab/InC-NC/1.0/",
-    "In Copyright - Rights-holder(s) Unlocatable or Unidentifiable":"http://rightsstatements.org/vocab/InC-RUU/1.0/",
-    "No Copyright - Contractual Restrictions":"http://rightsstatements.org/vocab/NoC-CR/1.0/",
-    "No Copyright - Non-Commercial Use Only":"http://rightsstatements.org/vocab/NoC-NC/1.0/",
-    "No Copyright - Other Known Legal Restrictions":"http://rightsstatements.org/vocab/NoC-OKLR/1.0/",
-    "No Copyright - United States":"http://rightsstatements.org/vocab/NoC-US/1.0/",
-    "Copyright Not Evaluated":"http://rightsstatements.org/vocab/CNE/1.0/",
-    "Copyright Undetermined":"http://rightsstatements.org/vocab/UND/1.0/",
-    "No Known Copyright":"http://rightsstatements.org/vocab/NKC/1.0/"
-    }
 qdcFieldsDict = {
     "dcterms:provenance":"dcterms_provenance",
     "dc:title":"dcterms_title",
@@ -49,6 +29,7 @@ qdcFieldsDict = {
     "dlg:subjectPersonal":"dlg_subject_personal"
     }
 nsDict = {
+    'oai_dc':'http://www.openarchives.org/OAI/2.0/oai_dc/',
     'oai_qdc':'http://worldcat.org/xmlschemas/qdc-1.0/',
     'dcterms':'http://purl.org/dc/terms/',
     'dc':'http://purl.org/dc/elements/1.1/',
@@ -64,15 +45,26 @@ xmlFile = input('What xml file would you like to add rights statement to? (do no
 # --- Ask for values not in harvested xml
 publicStatus = input('These records will be pubic. (enter true or false)   ')
 dplaStatus = input('These records will be included in DPLA. (enter true or false)   ')
-localStatus = input('These records are hosted at the DLG. (enter true or false)   ')
+localStatus = input('These digital objects are hosted at the DLG. (enter true or false)   ')
 portal = input('What portal(s) will these items be in? (Enter multiple values with a space between them: georgia crdl)   ')
 collCode = input('What collection do these records belong to? (enter repo_coll)   ')
 
 addColls = input('Do these records need to be added to additional collections? (y or n)   ')
-if addColls is 'y':
+if addColls == 'y':
     colls = input('Enter the additional collections with a space between them. Ex. repo_coll repo_coll    ')
 
 baseUrl = input('What is the base URL for the item id?    ')
+
+
+# --- Ask for dc version and adjust for repox formatting
+dcVersion = input('Are these DC or QDC records? (Enter dc or qdc)    ')
+if dcVersion == 'dc':
+    dcValue = 'oai_dc:dc'
+if dcVersion == 'qdc':
+    dcValue = 'oai_qdc:qualifieddc'
+
+slugPath = 'metadata/' + dcValue + '/dcterms:isShownAt'
+nodePath = 'item/metadata/' + dcValue
 
 
 # --- Parse file and remove blank space so pretty print will work ---
@@ -121,7 +113,7 @@ for items in root.findall('item'):
     collection.append(recordId)
 
     # --- Add additional collections if necessary ---
-    if addColls is 'y':
+    if addColls == 'y':
         # --- Top level ---
         otherColls1 = etree.Element('other_colls')
         otherColls1.set('type', 'array')
@@ -171,14 +163,14 @@ for items in root.findall('item'):
 
     # --- Get item IDs (slugs) and add them to structure ---
     slug = etree.Element('slug')
-    origUrl = items.find('metadata/oai_qdc/dcterms:isShownAt', nsDict)
+    origUrl = items.find(slugPath, nsDict)
     ID = origUrl.text.replace(baseUrl, "")
     slug.text = ID
     items.append(slug)
 
 
 # --- Do the processing on original xml ---
-for items in root.findall('item/metadata/oai_qdc', nsDict):
+for items in root.findall(nodePath, nsDict):
     # --- Convert all the fields
     for keys in qdcFieldsDict:
         nestedFormat(items, keys)
