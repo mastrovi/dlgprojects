@@ -2,5 +2,5 @@
 
 Projects for the DLG
 
-# --- dcqToDlgadmin.py
+# dcqToDlgadmin.py
 Converts Qualified Dublin Core XML records to DLGadmin nested format
