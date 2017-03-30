@@ -2,4 +2,4 @@
 
 Projects included:
 
-dcqToDlgadmin -- Converts Qualified Dublin Core XML records to DLGadmin nested format
+dcqToDlgadmin -- Converts harvested Dublin Core XML records to DLGadmin nested format
