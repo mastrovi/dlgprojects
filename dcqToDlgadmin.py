@@ -42,7 +42,7 @@ nsDict = {
 xmlFile = input('What xml file would you like to add rights statement to? (do not enter file extension)    ') + '.xml'
 
 
-# --- Ask for values not in harvested xml
+# --- Ask for values not in harvested xml ---
 publicStatus = input('These records will be pubic. (enter true or false)   ')
 dplaStatus = input('These records will be included in DPLA. (enter true or false)   ')
 localStatus = input('These digital objects are hosted at the DLG. (enter true or false)   ')
@@ -56,8 +56,8 @@ if addColls == 'y':
 baseUrl = input('What is the base URL for the item id?    ')
 
 
-# --- Ask for dc version and adjust for repox formatting
-dcVersion = input('Are these DC or QDC records? (Enter dc or qdc)    ')
+# --- Ask for dc version and adjust for repox formatting ---
+dcVersion = input('Were these harvested as DC or QDC records? (Enter dc or qdc)    ')
 if dcVersion == 'dc':
     dcValue = 'oai_dc:dc'
 if dcVersion == 'qdc':
@@ -105,7 +105,7 @@ def nestedFormat(item, oldtag):
 # --- Add inputted values ---
 for items in root.findall('item'):
 
-    # --- Add collection structure
+    # --- Add collection structure ---
     collection = etree.Element('collection')
     items.append(collection)
     recordId = etree.SubElement(collection, 'record_id')
