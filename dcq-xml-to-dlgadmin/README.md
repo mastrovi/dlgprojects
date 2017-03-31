@@ -25,7 +25,7 @@ The pre-processing and validation program will help to prepare and validate your
     * If yes: Enter the additional collections with a space between them. (Ex. repo_coll repo_coll)
    * What is the base URL for the item id?
    * Were these harvested as DC or QDC records? (Enter dc or qdc)
-3. The new xml file will be created in the directory containing the input file and will be named *filename*_batch.xml
+3. The new xml file will be created in the directory containing the input file and will be named *inputFilename*_batch.xml
    
 ### Some notes
 If dcqToDlgAdmin.py is in the same directory as your xml enter only the name of the file without the extension (Ex. myXmlFile). If you are running dcqToDlgAdmin.py from a different directory use the full path (Ex. C:\some\place\myXmlFile)
