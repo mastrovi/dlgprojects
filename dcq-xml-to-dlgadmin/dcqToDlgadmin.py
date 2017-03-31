@@ -43,7 +43,7 @@ xmlFile = input('What xml file would you like to add rights statement to? (do no
 
 
 # --- Ask for values not in harvested xml ---
-publicStatus = input('These records will be pubic. (enter true or false)   ')
+publicStatus = input('These records will be public. (enter true or false)   ')
 dplaStatus = input('These records will be included in DPLA. (enter true or false)   ')
 localStatus = input('These digital objects are hosted at the DLG. (enter true or false)   ')
 portal = input('What portal(s) will these items be in? (Enter multiple values with a space between them: georgia crdl)   ')
