@@ -51,7 +51,7 @@ collCode = input('What collection do these records belong to? (enter repo_coll) 
 
 addColls = input('Do these records need to be added to additional collections? (y or n)   ')
 if addColls == 'y':
-    colls = input('Enter the additional collections with a space between them. Ex. repo_coll repo_coll    ')
+    colls = input('Enter the additional collections with a space between them. (Ex. repo_coll repo_coll)    ')
 
 baseUrl = input('What is the base URL for the item id?    ')
 
