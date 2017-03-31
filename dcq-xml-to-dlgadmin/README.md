@@ -4,12 +4,12 @@
 
 This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works specifically with records that have been harvested using Repox from either DC or DCQ repositories. Proper formatting includes the following:
 
-* field names outlined in the mapping document
+* field names (outlined in the mapping document)
 * correct namespaces
 * removal of extraneous content.
 
 
-The 'link to file' will help to prepare and validate your file for reformatting. An [example xml](test_testers.xml) file is provided.
+The pre-processing and validation program will help to prepare and validate your file for reformatting. A working [example xml](test_testers.xml) file is provided.
 
 
 ### Instructions for use
@@ -25,6 +25,7 @@ The 'link to file' will help to prepare and validate your file for reformatting.
     * If yes: Enter the additional collections with a space between them. (Ex. repo_coll repo_coll)
    * What is the base URL for the item id?
    * Were these harvested as DC or QDC records? (Enter dc or qdc)
+3. The new xml file will be created in the directory containing the input file and will be named *filename*_batch.xml
    
 ### Some notes
 If dcqToDlgAdmin.py is in the same directory as your xml enter only the name of the file without the extension (Ex. myXmlFile). If you are running dcqToDlgAdmin.py from a different directory use the full path (Ex. C:\some\place\myXmlFile)
