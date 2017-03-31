@@ -1,6 +1,8 @@
 # About dcqToDlgAdmin.py
 
-This Python 3 program will convert properly prepared XML records to the DLGadmin nested xml structure. It works specifically with records that have been harvested using Repox from either DC or DCQ repositories. Proper formatting includes the following:
+##### Dependencies: Python 3.x, [Lxml library]https://pypi.python.org/pypi/lxml
+
+This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works specifically with records that have been harvested using Repox from either DC or DCQ repositories. Proper formatting includes the following:
 
 * field names outlined in the mapping document
 * correct namespaces
