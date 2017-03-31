@@ -21,7 +21,9 @@ This Python 3 program will convert properly prepared XML records to the DLGadmin
    * Were these harvested as DC or QDC records? (Enter dc or qdc)
    
 ### Some notes
-If dcqToDlgAdmin.py is in the same directory as your xml enter only the name of the file without the extension (Ex. myXmlFile). If you are running dcqToDlgAdmin.py from a different directory use the full path (Ex. C:\some\place\myXmlFile)  
+If dcqToDlgAdmin.py is in the same directory as your xml enter only the name of the file without the extension (Ex. myXmlFile). If you are running dcqToDlgAdmin.py from a different directory use the full path (Ex. C:\some\place\myXmlFile)
+
+
 The base url is the part of the isShownAt url that can be eliminated to get the item ID. For Exmple:
    * isShownAt: http://myexample.com/id/test/54
    * base url: http://myexample.com/id/test/
