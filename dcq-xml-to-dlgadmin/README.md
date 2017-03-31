@@ -6,6 +6,10 @@ This Python 3 program will convert properly prepared XML records to the DLGadmin
 * correct namespaces
 * removal of extraneous content.
 
+
+The 'link to file' will help to prepare and validate your file for reformatting.
+
+
 ### Instructions for use
 1. Drop dcqToDlgAdmin.py into the directory with your xml and run the program. (Alternatively you may run the program and input the complete file path.)
 2. Provide input for the following questions:
