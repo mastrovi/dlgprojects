@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from lxml import etree
 
-# --- Dictionaries for reference ---
+# --- Dictionaries for reference
 qdcFieldsDict = {
     "dcterms:provenance":"dcterms_provenance",
     "dc:title":"dcterms_title",
@@ -37,51 +37,21 @@ nsDict = {
     'repox':'http://repox.ist.utl.pt'
     }
 
-
-# --- Ask for file ---
-xmlFile = input('What xml file would you like to add rights statement to? (do not enter file extension)    ') + '.xml'
-
-
-# --- Ask for values not in harvested xml ---
-publicStatus = input('These records will be public. (enter true or false)   ')
-dplaStatus = input('These records will be included in DPLA. (enter true or false)   ')
-localStatus = input('These digital objects are hosted at the DLG. (enter true or false)   ')
-portal = input('What portal(s) will these items be in? (Enter multiple values with a space between them: georgia crdl)   ')
-collCode = input('What collection do these records belong to? (enter repo_coll)   ')
-
-addColls = input('Do these records need to be added to additional collections? (y or n)   ')
-if addColls == 'y':
-    colls = input('Enter the additional collections with a space between them. (Ex. repo_coll repo_coll)    ')
-
-baseUrl = input('What is the base URL for the item id?    ')
-
-
-# --- Ask for dc version and adjust for repox formatting ---
-dcVersion = input('Were these harvested as DC or QDC records? (Enter dc or qdc)    ')
-if dcVersion == 'dc':
-    dcValue = 'oai_dc:dc'
-if dcVersion == 'qdc':
-    dcValue = 'oai_qdc:qualifieddc'
-
-slugPath = 'metadata/' + dcValue + '/dcterms:isShownAt'
-nodePath = 'item/metadata/' + dcValue
-
-
-# --- Parse file and remove blank space so pretty print will work ---
-parser = etree.XMLParser(remove_blank_text=True)
-tree = etree.parse(xmlFile, parser)
-root = tree.getroot()
-
-
-# --- Set up XML to have 'items/item' hierarchy ---
-root.tag = 'items'
-root.set('type', 'array')
-
-for items in root.findall('record'):
-    items.tag = 'item'
-
-
 # --- Functions ---
+# --- True/False Validation ---
+def tf(prompt):
+    '''Reduce input error by asking for single character input (t/f)'''
+    while True:
+        value = (input(prompt))
+        if value == 't':
+            value = 'true'
+            break
+        elif value == 'f':
+            value = 'false'
+            break
+    return value
+
+# --- XML processing function ---
 def nestedFormat(item, oldtag):
     '''Converts to dlgadmin nested xml format, looks for the old tag,
     creates a new node and sets the type, nests new nodes with text values,
@@ -100,6 +70,47 @@ def nestedFormat(item, oldtag):
             newEl.append(new)
             item.remove(fieldname[x])
             x += 1
+
+
+# --- Prerequisite information ---
+# --- Ask for file ---
+xmlFile = input('What xml file would you like to add rights statement to? (do not enter file extension)    ') + '.xml'
+
+# --- Ask for values not in harvested xml ---
+publicStatus = tf('These records will be public. (enter t or f)   ')
+dplaStatus = tf('These records will be included in DPLA. (enter t or f)   ')
+localStatus = tf('These digital objects are hosted at the DLG. (enter t or f)   ')
+portal = input('What portal(s) will these items be in? (Enter multiple values with a space between them: georgia crdl)   ')
+collCode = input('What collection do these records belong to? (enter repo_coll)   ')
+addColls = input('Do these records need to be added to additional collections? (y or n)   ')
+if addColls == 'y':
+    colls = input('Enter the additional collections with a space between them. (Ex. repo_coll repo_coll)    ')
+baseUrl = input('What is the base URL for the item id?    ')
+
+# --- Ask for dc version and adjust for repox formatting ---
+dcVersion = input('Were these harvested as DC or QDC records? (Enter dc or qdc)    ')
+if dcVersion == 'dc':
+    dcValue = 'oai_dc:dc'
+elif dcVersion == 'qdc':
+    dcValue = 'oai_qdc:qualifieddc'
+
+slugPath = 'metadata/' + dcValue + '/dcterms:isShownAt'
+nodePath = 'item/metadata/' + dcValue
+
+
+# --- Actual work on the file begins ---
+# --- Parse file and remove blank space so pretty print will work ---
+parser = etree.XMLParser(remove_blank_text=True)
+tree = etree.parse(xmlFile, parser)
+root = tree.getroot()
+
+
+# --- Set up XML to have 'items/item' hierarchy ---
+root.tag = 'items'
+root.set('type', 'array')
+
+for items in root.findall('record'):
+    items.tag = 'item'
 
 
 # --- Add inputted values ---
