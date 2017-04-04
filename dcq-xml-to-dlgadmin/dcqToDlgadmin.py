@@ -1,44 +1,10 @@
 #!/usr/bin/env python
 from lxml import etree
+import reference.dictionaries as di
 
-# --- Dictionaries for reference
-qdcFieldsDict = {
-    "dcterms:provenance":"dcterms_provenance",
-    "dc:title":"dcterms_title",
-    "dc:creator":"dcterms_creator",
-    "dc:contributor":"dcterms_contributor",
-    "dc:subject":"dcterms_subject",
-    "dc:description":"dcterms_description",
-    "dc:identifier":"dcterms_identifier",
-    "dc:publisher":"dcterms_publisher",
-    "dcterms:isShownAt":"dcterms_is_shown_at",
-    "dc:date":"dc_date",
-    "dcterms:temporal":"dcterms_temporal",
-    "dcterms:spatial":"dcterms_spatial",
-    "dc:format":"dc_format",
-    "dcterms:isPartOf":"dcterms_is_part_of",
-    "dc:rights":"dc_right",
-    "dcterms:rightsHolder":"dcterms_rights_holder",
-    "dcterms:bibliographicCitation":"dcterms_bibliographic_citation",
-    "dlg:localRights":"dlg_local_right",
-    "dc:relation":"dc_relation",
-    "dc:type":"dcterms_type",
-    "dcterms:medium":"dcterms_medium",
-    "dcterms:extent":"dcterms_extent",
-    "dc:language":"dcterms_language",
-    "dlg:subjectPersonal":"dlg_subject_personal"
-    }
-nsDict = {
-    'oai_dc':'http://www.openarchives.org/OAI/2.0/oai_dc/',
-    'oai_qdc':'http://worldcat.org/xmlschemas/qdc-1.0/',
-    'dcterms':'http://purl.org/dc/terms/',
-    'dc':'http://purl.org/dc/elements/1.1/',
-    'dlg':'http://dlg.org/local/elements/1.1/',
-    'repox':'http://repox.ist.utl.pt'
-    }
 
-# --- Functions ---
-# --- True/False Validation ---
+# --- XML Conversion Functions ---
+# --- True/False Validation (theoretically it will be at some point) ---
 def tf(prompt):
     '''Reduce input error by asking for single character input (t/f)'''
     while True:
@@ -56,16 +22,16 @@ def nestedFormat(item, oldtag):
     '''Converts to dlgadmin nested xml format, looks for the old tag,
     creates a new node and sets the type, nests new nodes with text values,
     then removes the old node'''
-    fieldname = items.findall(str(oldtag), nsDict)
+    fieldname = items.findall(str(oldtag), di.nsDict)
     if fieldname is not None:
         x = 0
         parent = item.getparent()
         grParent = parent.getparent()
-        newEl = etree.Element(str(qdcFieldsDict[oldtag]))
+        newEl = etree.Element(str(di.qdcFieldsDict[oldtag]))
         newEl.set('type', 'array')
         grParent.insert(0, newEl)
         for new in fieldname:
-            new = etree.SubElement(newEl, str(qdcFieldsDict[oldtag]))
+            new = etree.SubElement(newEl, str(di.qdcFieldsDict[oldtag]))
             new.text = fieldname[x].text
             newEl.append(new)
             item.remove(fieldname[x])
@@ -174,16 +140,16 @@ for items in root.findall('item'):
 
     # --- Get item IDs (slugs) and add them to structure ---
     slug = etree.Element('slug')
-    origUrl = items.find(slugPath, nsDict)
+    origUrl = items.find(slugPath, di.nsDict)
     ID = origUrl.text.replace(baseUrl, "")
     slug.text = ID
     items.append(slug)
 
 
 # --- Do the processing on original xml ---
-for items in root.findall(nodePath, nsDict):
+for items in root.findall(nodePath, di.nsDict):
     # --- Convert all the fields
-    for keys in qdcFieldsDict:
+    for keys in di.qdcFieldsDict:
         nestedFormat(items, keys)
 
 
