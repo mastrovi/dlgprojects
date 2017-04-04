@@ -16,9 +16,9 @@ The pre-processing and validation program will help to prepare and validate your
 1. Drop dcqToDlgAdmin.py into the directory with your xml and run the program. (Alternatively you may run the program and input the complete file path.)
 2. Provide input for the following questions:
    * What xml file would you like to add rights statement to? (do not enter file extension)
-   * These records will be public. (enter true or false)
-   * These records will be included in DPLA. (enter true or false)
-   * These digital objects are hosted at the DLG. (enter true or false)
+   * These records will be public. (enter t or f)
+   * These records will be included in DPLA. (enter t or f)
+   * These digital objects are hosted at the DLG. (enter t or f)
    * What portal(s) will these items be in? (Enter multiple values with a space between them: georgia crdl amso other)
    * What collection do these records belong to? (enter repo_coll)
    * Do these records need to be added to additional collections? (y or n)
