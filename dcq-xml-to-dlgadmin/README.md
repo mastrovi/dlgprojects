@@ -2,7 +2,7 @@
 
 ##### *Dependencies: [Python 3.x](https://www.python.org/), [Lxml library](https://pypi.python.org/pypi/lxml)*
 
-This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works specifically with records that have been harvested using Repox from either DC or DCQ repositories. Proper formatting includes the following:
+This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works with records that have been harvested from either DC or DCQ repositories. Proper formatting includes the following:
 
 * field names (outlined in the mapping document)
 * correct namespaces
