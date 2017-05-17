@@ -15,7 +15,7 @@ The pre-processing and validation program will help to prepare and validate your
 ### Instructions for use
 1. Drop dcqToDlgAdmin.py into the directory with your xml and run the program. (Alternatively you may run the program and input the complete file path.)
 2. Provide input for the following questions:
-   * What xml file would you like to add rights statement to? (do not enter file extension)
+   * What xml file would you like to convert? (do not enter file extension)
    * These records will be public. (enter t or f)
    * These records will be included in DPLA. (enter t or f)
    * These digital objects are hosted at the DLG. (enter t or f)
