@@ -4,7 +4,7 @@
 
 This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works with records that have been harvested from either DC or DCQ repositories. Proper formatting includes the following:
 
-* field names (outlined in the mapping document)
+* field names [(outlined in the mapping document)](https://docs.google.com/spreadsheets/d/1hwoKAh1_jk6HN6hyBCbwi_VizuR14RktfqoZc6jTIrs/edit?usp=sharing)
 * correct namespaces
 * removal of extraneous content.
 
