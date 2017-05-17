@@ -40,7 +40,7 @@ def nestedFormat(item, oldtag):
 
 # --- Prerequisite information ---
 # --- Ask for file ---
-xmlFile = input('What xml file would you like to add rights statement to? (do not enter file extension)    ') + '.xml'
+xmlFile = input('What xml file would you like to convert? (do not enter file extension)    ') + '.xml'
 
 # --- Ask for values not in harvested xml ---
 publicStatus = tf('These records will be public. (enter t or f)   ')
