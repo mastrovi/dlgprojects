@@ -60,7 +60,11 @@ if dcVersion == 'dc':
 elif dcVersion == 'qdc':
     dcValue = 'oai_qdc:qualifieddc'
 
-slugPath = 'metadata/' + dcValue + '/dcterms:isShownAt'
+# --- If locally hosted use isShownBy to generate slug, else use isShownAt ---
+if localStatus == 'true':
+    slugPath = 'metadata/' + dcValue + '/dcterms:isShownBy'
+else:
+    slugPath = 'metadata/' + dcValue + '/dcterms:isShownAt'
 nodePath = 'item/metadata/' + dcValue
 
 
