@@ -9,7 +9,7 @@ This program will convert properly prepared XML records to the DLGadmin nested x
 * removal of extraneous content.
 
 
-The pre-processing and validation program will help to prepare and validate your file for reformatting. A working [example xml](test_testers.xml) file is provided.
+The pre-processing and validation program (when it has been written, it doesn't exist yet!) will help to prepare and validate your file for reformatting. A working [example xml](test_testers.xml) file is provided.
 
 
 ### Instructions for use
