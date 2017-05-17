@@ -30,7 +30,8 @@ qdcFieldsDict = {
     "dc:description":"dcterms_description",
     "dc:identifier":"dcterms_identifier",
     "dc:publisher":"dcterms_publisher",
-    "dcterms:isShownAt":"dcterms_is_shown_at",
+    "dcterms:isShownAt":"edm_is_shown_at",
+    "dcterms:isShownBy":"edm_is_shown_by",
     "dc:date":"dc_date",
     "dcterms:temporal":"dcterms_temporal",
     "dcterms:spatial":"dcterms_spatial",
@@ -54,5 +55,6 @@ nsDict = {
     'dcterms':'http://purl.org/dc/terms/',
     'dc':'http://purl.org/dc/elements/1.1/',
     'dlg':'http://dlg.org/local/elements/1.1/',
-    'repox':'http://repox.ist.utl.pt'
+    'repox':'http://repox.ist.utl.pt',
+    'edm': 'http://www.europeana.eu/schemas/edm/'
     }
