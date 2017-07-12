@@ -114,14 +114,18 @@ for items in root.findall('item'):
     portal1.set('type', 'array')
     items.append(portal1)
     # --- Second level ---
-    portal2 = etree.SubElement(portal1, 'portal')
-    portal1.append(portal2)
+    # --- If multiple portal add the special structure ---
     if ' ' in portal:
         portals = portal.split()
         for words in portals:
+            portal2 = etree.SubElement(portal1, 'portal')
+            portal1.append(portal2)
             portalCode = etree.SubElement(portal2, 'code')
             portalCode.text = (str(words))
+    # --- Otherwise use the standard format ---
     else:
+        portal2 = etree.SubElement(portal1, 'portal')
+        portal1.append(portal2)
         portalCode = etree.SubElement(portal2, 'code')
         portalCode.text = (str(portal))
         portal2.append(portalCode)
