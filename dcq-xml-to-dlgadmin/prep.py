@@ -27,6 +27,8 @@ filedata = filedata.replace('<oai_dc:dc', '<oai_dc:dc xmlns:dlg=\"http://dlg.org
 filedata = filedata.replace('<oai_qdc:qualifieddc', '<oai_qdc:qualifieddc xmlns:dlg=\"http://dlg.org/local/elements/1.1/\" ')
 print ('Situating Namespaces...')
 
+# --- Get rid of deleted items ---
+filedata = re.sub(r'<.*deleted.*>\n.*<metadata/>\n.*</record>', "", filedata)
 
 # --- Create new xml file ---
 # --- Split filename from extension
