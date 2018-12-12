@@ -6,8 +6,6 @@ from lxml import etree
 xmlFile = input('What xml file would you like to convert?')
 if ".xml" not in xmlFile:
     xmlFile = xmlFile  + '.xml'
-#xmlFile = 'gsu_bigjoy-1.xml'
-#cleaned = 'gsu_bigjoy-1_clean.xml'
 
 # --- Read in the file ---
 with open(xmlFile, 'r') as file:
