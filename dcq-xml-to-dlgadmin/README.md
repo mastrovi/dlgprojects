@@ -1,8 +1,8 @@
-# About dcqToDlgAdmin.py
+# About dcqToDlgAdmin
 
 ##### *Dependencies: [Python 3.x](https://www.python.org/), [Lxml library](https://pypi.python.org/pypi/lxml)*
 
-This program will convert properly prepared XML records to the DLGadmin nested xml structure. It works with records that have been harvested from either DC or DCQ repositories. Proper formatting includes the following:
+These programs will convert properly prepared XML records to the DLGadmin nested xml structure. It works with records that have been harvested from either DC or DCQ repositories. Proper formatting includes the following:
 
 * field names [(outlined in the mapping document)](https://docs.google.com/spreadsheets/d/1hwoKAh1_jk6HN6hyBCbwi_VizuR14RktfqoZc6jTIrs/edit?usp=sharing)
 * correct namespaces
@@ -13,8 +13,9 @@ The [pre-processing program](prep.py) and validation program (when it has been w
 
 
 ### Instructions for use
-1. Drop dcqToDlgAdmin.py into the directory with your xml and run the program. (Alternatively you may run the program and input the complete file path.)
-2. Provide input for the following questions:
+1. Run prep.py. It will strip the repox prefix and add all necessary namespaces to the new file.
+2. Run dcqToDlgAdmin.py
+3. Provide input for the following questions:
    * What xml file would you like to convert?
    * These records will be public. (enter t or f)
    * These records will be included in DPLA. (enter t or f)
