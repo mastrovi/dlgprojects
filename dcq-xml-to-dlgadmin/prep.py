@@ -3,7 +3,7 @@ import re
 from lxml import etree
 
 # --- Ask for file, take file name with or without extension. If no extension, add it ---
-xmlFile = input('What xml file would you like to convert?')
+xmlFile = input('What xml file would you like to convert? (Enter full file path)')
 if ".xml" not in xmlFile:
     xmlFile = xmlFile  + '.xml'
 
