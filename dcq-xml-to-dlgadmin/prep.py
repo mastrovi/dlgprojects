@@ -29,6 +29,12 @@ print ('Situating Namespaces...')
 
 # --- Get rid of deleted items ---
 filedata = re.sub(r'<.*deleted.*>\n.*<metadata/>\n.*</record>', "", filedata)
+print ('Getting rid of deleted records...')
+print ('Changing:')
+
+# --- Change any  dc:identifier tags containing http to dcterms:isShownAt ---
+filedata = re.sub(r'<dc:identifier>(http.*)</dc:identifier>', r"<dcterms:isShownAt>\1</dcterms:isShownAt>", filedata)
+print ('dc:identifier to dcterms:isShownAt')
 
 # --- Create new xml file ---
 # --- Split filename from extension
