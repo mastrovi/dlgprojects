@@ -13,7 +13,7 @@ The [pre-processing program](prep.py) and validation program (when it has been w
 
 
 ### Instructions for use
-1. Run prep.py. It will strip the repox prefix and add all necessary namespaces to the new file.
+1. Run prep.py. It will strip the repox prefix, adds all necessary namespaces, removes all deleted records, and creates a new file with    '_prep' added to the filename.
 2. Run dcqToDlgAdmin.py
 3. Provide input for the following questions:
    * What xml file would you like to convert?
