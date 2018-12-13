@@ -36,6 +36,11 @@ print ('Changing:')
 filedata = re.sub(r'<dc:identifier>(http.*)</dc:identifier>', r"<dcterms:isShownAt>\1</dcterms:isShownAt>", filedata)
 print ('dc:identifier to dcterms:isShownAt')
 
+# --- Change any dc:identifier tags ending with .jpg (thumbnail links) ---
+if re.search(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', filedata) is not None:
+    filedata = re.sub(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', "", filedata)
+    print ('Removing dcterms:isShownAt ending with .jpg')
+    
 # --- Create new xml file ---
 # --- Split filename from extension
 filename = xmlFile
