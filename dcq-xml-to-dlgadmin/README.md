@@ -13,10 +13,10 @@ The [pre-processing program](prep.py) and validation program (when it has been w
 
 
 ### Instructions for use
-1. Run prep.py. It will create a new file with '_prep' added to the filename and make the following modification:
+1. Run prep.py. It will create a new file with _prep added to the filename and make the following modifications:
    * Strip the repox prefix
-   * Adds all necessary namespaces
-   * Removes all deleted records
+   * Add all necessary namespaces
+   * Remove all deleted records
    * Convert any dc:identifier tags containing http to dcterms:isShownAt
    * Remove any dc:identifier tags ending with .jpg (thumbnail links)
 2. Run dcqToDlgAdmin.py
