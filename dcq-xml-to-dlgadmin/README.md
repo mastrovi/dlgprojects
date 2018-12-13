@@ -13,7 +13,7 @@ The [pre-processing program](prep.py) and validation program (when it has been w
 
 
 ### Instructions for use
-1. Run prep.py. It will create a new file with _prep added to the filename and make the following modifications:
+1. Run prep.py. It will create a new file with `_prep` added to the filename and make the following modifications:
    * Strip the repox prefix
    * Add all necessary namespaces
    * Remove all deleted records
