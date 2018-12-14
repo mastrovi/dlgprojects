@@ -11,36 +11,68 @@ if ".xml" not in xmlFile:
 with open(xmlFile, 'r') as file:
     filedata = file.read()
 
-# --- check to see if it has a repox prefix ---
-repox = filedata.find('repox:')
 
-# --- if Repox file ---
-if repox > 0:
-    # Replace repox prefixes and situate namespaces ---
+
+'''Start file processing here: includes reoving repox prefix, namespace management, common tag changes,
+and splitting multivalued feilds'''
+# --- check to see if it has a repox prefix ---
+if filedata.find('repox:') is not None:
+    # Replace repox prefixes ---
     filedata = filedata.replace('repox:', '')
-    print ('Removing Repox prefix...')
+    print ('Removing Repox prefix')
 else:
     print ('Not a repox file.')
 
 # --- Put in necessary namespaces ---
 filedata = filedata.replace('<oai_dc:dc', '<oai_dc:dc xmlns:dlg=\"http://dlg.org/local/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\"')
 filedata = filedata.replace('<oai_qdc:qualifieddc', '<oai_qdc:qualifieddc xmlns:dlg=\"http://dlg.org/local/elements/1.1/\" ')
-print ('Situating Namespaces...')
+print ('Situating Namespaces')
 
 # --- Get rid of deleted items ---
 filedata = re.sub(r'<.*deleted.*>\n.*<metadata/>\n.*</record>', "", filedata)
-print ('Getting rid of deleted records...')
-print ('Changing:')
+print ('Getting rid of deleted records')
 
-# --- Change any  dc:identifier tags containing http to dcterms:isShownAt ---
+# --- Change any dc:identifier tags containing http to dcterms:isShownAt ---
 filedata = re.sub(r'<dc:identifier>(http.*)</dc:identifier>', r"<dcterms:isShownAt>\1</dcterms:isShownAt>", filedata)
-print ('dc:identifier to dcterms:isShownAt')
+print ('Changing dc:identifier to dcterms:isShownAt')
 
-# --- Change any dc:identifier tags ending with .jpg (thumbnail links) ---
+# --- Remove any dc:identifier tags ending with .jpg (thumbnail links) ---
 if re.search(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', filedata) is not None:
     filedata = re.sub(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', "", filedata)
     print ('Removing dcterms:isShownAt ending with .jpg')
-    
+
+# --- Look for semicolons at the end of string (CONTENTdm specfic)
+if filedata.find(';<') is not None:
+    filedata = filedata.replace(';<', '<')
+    print('Removing trailing semicolons')
+
+# --- Replace &amp; with & to make splitting tags easier ---
+if filedata.find('&amp;') is not None:
+    filedata = filedata.replace('&amp;', '&')
+
+# --- Split multivalued fields into individual fields ---
+# --- Expressions for each field to separate ---
+separateFields = [
+    'dc:subject',
+    'dc:type',
+    'dc:format',
+    'dc:creator',
+    'dc:contributor',
+    'dcterms:spatial'
+    ]
+
+for field in separateFields:
+    print('Separating ' + field)
+    while re.search(r'<' + field + '>.*;.*</' + field + '>', filedata) is not None:
+        filedata = re.sub(r'<(' + field + ')>(.*);(.*)</' + field + '>', r'<\1>\2</\1>\n<\1>\3</\1>', filedata)
+
+# --- Add &amp; reference back for valid XML ---
+if filedata.find('&') is not None:
+    filedata = filedata.replace('&', '&amp;')
+
+
+
+'''Output new file with all changes'''
 # --- Create new xml file ---
 # --- Split filename from extension
 filename = xmlFile
@@ -57,3 +89,5 @@ file.close()
 prepFile.close()
 
 print('\n', 'Your new file,', new_filename, ', has been created.')
+
+input("Press Enter to close...")
