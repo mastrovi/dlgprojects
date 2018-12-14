@@ -8,7 +8,7 @@ if ".xml" not in xmlFile:
     xmlFile = xmlFile  + '.xml'
 
 # --- Read in the file ---
-with open(xmlFile, 'r') as file:
+with open(xmlFile, 'r', encoding="utf-8") as file:
     filedata = file.read()
 
 
@@ -82,7 +82,7 @@ filename = xmlFile
 new_filename = prefix + '_prep.xml'
 
 # --- Write new file --
-with open(new_filename, 'w') as prepFile:
+with open(new_filename, 'w', encoding="utf-8") as prepFile:
   prepFile.write(filedata)
 
 file.close()
