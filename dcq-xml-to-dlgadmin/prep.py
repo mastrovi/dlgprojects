@@ -42,15 +42,16 @@ if re.search(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', filedata) is
     print ('Removing dcterms:isShownAt ending with .jpg')
 
 # --- Look for semicolons at the end of string (CONTENTdm specfic)
-if filedata.find(';<') is not None:
-    filedata = filedata.replace(';<', '<')
-    print('Removing trailing semicolons')
+#if filedata.find(';<') is not None:
+#    filedata = filedata.replace(';<', '<')
+#    print('Removing trailing semicolons')
 
-# --- Replace &amp; with & to make splitting tags easier ---
+# --- Replace &amp; with &amp to make splitting tags easier ---
 if filedata.find('&amp;') is not None:
-    filedata = filedata.replace('&amp;', '&')
+    filedata = filedata.replace('&amp;', '&amp')
 
 # --- Split multivalued fields into individual fields ---
+# --- Look for semicolons at the end of string (CONTENTdm specfic)
 # --- Expressions for each field to separate ---
 separateFields = [
     'dc:subject',
@@ -63,12 +64,16 @@ separateFields = [
 
 for field in separateFields:
     print('Separating ' + field)
-    while re.search(r'<' + field + '>.*;.*</' + field + '>', filedata) is not None:
-        filedata = re.sub(r'<(' + field + ')>(.*);(.*)</' + field + '>', r'<\1>\2</\1>\n<\1>\3</\1>', filedata)
+    if re.search(r'<' + field + '>(.*?);</' + field + '>', filedata) is not None:
+        filedata = re.sub(r'<(' + field + ')>(.*?);</' + field + '>', r'<\1>\2</\1>', filedata)
+    if re.search(r'<' + field + '>(.*?); (.*?)</' + field + '>', filedata) is not None:
+        filedata = re.sub(r'<(' + field + ')>(.*?); (.*?)</' + field + '>', r'<\1>\2</\1>\n<\1>\3</\1>', filedata)
+    if re.search(r'<' + field + '>(.*?);(.*?)</' + field + '>', filedata) is not None:
+        filedata = re.sub(r'<(' + field + ')>(.*?);(.*?)</' + field + '>', r'<\1>\2</\1>\n<\1>\3</\1>', filedata) 
 
 # --- Add &amp; reference back for valid XML ---
-if filedata.find('&') is not None:
-    filedata = filedata.replace('&', '&amp;')
+if filedata.find('&amp') is not None:
+    filedata = filedata.replace('&amp', '&#38;')
 
 
 
