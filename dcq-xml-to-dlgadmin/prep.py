@@ -13,8 +13,8 @@ with open(xmlFile, 'r', encoding="utf-8") as file:
 
 
 
-'''Start file processing here: includes reoving repox prefix, namespace management, common tag changes,
-and splitting multivalued feilds'''
+'''Start file processing here: includes removing repox prefix, namespace management, common tag changes,
+and splitting multivalued fields'''
 # --- check to see if it has a repox prefix ---
 if filedata.find('repox:') is not None:
     # Replace repox prefixes ---
@@ -40,6 +40,11 @@ print ('Changing dc:identifier to dcterms:isShownAt')
 if re.search(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', filedata) is not None:
     filedata = re.sub(r'<dcterms:isShownAt>http.*\.jpg</dcterms:isShownAt>', "", filedata)
     print ('Removing dcterms:isShownAt ending with .jpg')
+
+    # --- Change any dc:date.created tags with additional data in timestamp to dc:date and converting to YYYY-MM-DD ---
+if re.search(r'<dc:date.created>(\d{4})-(\d{2})-(\d{2})(.*?)</dc:date.created>', filedata) is not None:
+    filedata = re.sub(r'<dc:date.created>(\d{4})-(\d{2})-(\d{2})(.*?)</dc:date.created>', r"<dc:date>\1-\2-\3</dc:date>", filedata)
+    print ('Changing dc:date.created to dc:date and removing extra data in timestamp')
 
 # --- Look for semicolons at the end of string (CONTENTdm specfic)
 #if filedata.find(';<') is not None:
