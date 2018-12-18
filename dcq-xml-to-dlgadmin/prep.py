@@ -75,6 +75,8 @@ for field in separateFields:
 if filedata.find('&amp') is not None:
     filedata = filedata.replace('&amp', '&#38;')
 
+#
+
 
 
 '''Output new file with all changes'''
