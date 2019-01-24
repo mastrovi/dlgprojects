@@ -1,0 +1,91 @@
+### Prefix:
+<?xml version='1.0' encoding='UTF-8'?>
+<items type="array">
+
+### Row Template:
+<item>
+{{forEach(cells["slug"].value.split("||"), slug, "<slug>" + slug + "</slug>")}}
+<collection>
+{{forEach(cells["collection"].value.split("||"), coll, "<record_id>" + coll + "</record_id>\n")}}
+</collection>
+{{forEach(cells["public"].value.split("||"), public, "<public type=\"boolean\">" + public + "</public>\n")}}
+{{forEach(cells["local"].value.split("||"), local, "<local type=\"boolean\">" + local + "</local>\n")}}
+<portals type="array">
+<portal>
+{{forEach(cells["portal"].value.split("||"), portal, "<code>" + portal + "</code>\n")}}
+</portal>
+</portals>
+{{forEach(cells["dpla"].value.split("||"), dpla, "<dpla type=\"boolean\">" + dpla + "</dpla>\n")}}
+<dcterms_subject type="array">
+{{forEach(cells["dcterms_subject"].value.split("||"), sub, "<dcterms_subject>" + sub + "</dcterms_subject>\n")}}
+</dcterms_subject>
+<edm_is_shown_at type="array">
+{{forEach(cells["edm_is_shown_at"].value.split("||"), shownAt, "<edm_is_shown_at>" + shownAt + "</edm_is_shown_at>\n")}}
+</edm_is_shown_at>
+<dc_identifer type="array">
+{{forEach(cells["dc_identifier"].value.split("||"), ident, "<dc_identifier>" + ident + "</dc_identifier>\n")}}
+</dc_identifer>
+<dcterms_format type="array">
+{{forEach(cells["dcterms_format"].value.split("||"), format, "<dcterms_format>" + format + "</dcterms_format>\n")}}
+</dcterms_format>
+<dcterms_medium type="array">
+{{forEach(cells["dcterms_medium"].value.split("||"), med, "<dcterms_medium>" + med + "</dcterms_medium>\n")}}
+</dcterms_medium>
+<dc_description type="array">
+{{forEach(cells["dc_description"].value.split("||"), desc, "<dc_description>" + desc + "</dc_description>\n")}}
+</dc_description>
+<dcterms_type type="array">
+{{forEach(cells["dcterms_type"].value.split("||"), type, "<dcterms_type>" + type + "</dcterms_type>\n")}}
+</dcterms_type>
+<dcterms_title type="array">
+{{forEach(cells["dcterms_title"].value.split("||"), title, "<dcterms_title>" + title + "</dcterms_title>\n")}}
+</dcterms_title>
+<dcterms_provenance type="array">
+{{forEach(cells["dcterms_provenance"].value.split("||"), prov, "<dcterms_provenance>" + prov + "</dcterms_provenance>\n")}}
+</dcterms_provenance>
+<dcterms_creator type="array">
+{{forEach(cells["dcterms_creator"].value.split("||"), create, "<dcterms_creator>" + create + "</dcterms_creator>\n")}}
+</dcterms_creator>
+<dcterms_publisher type="array">
+{{forEach(cells["dcterms_publisher"].value.split("||"), pub, "<dcterms_publisher>" + pub + "</dcterms_publisher>\n")}}
+</dcterms_publisher>
+<dcterms_is_part_of type="array">
+{{forEach(cells["dcterms_is_part_of"].value.split("||"), partOf, "<dcterms_is_part_of>" + partOf + "</dcterms_is_part_of>\n")}}
+</dcterms_is_part_of>
+<dc_date type="array">
+{{forEach(cells["dc_date"].value.split("||"), date, "<dc_date>" + date + "</dc_date>\n")}}
+</dc_date>
+<dcterms_temporal type="array">
+{{forEach(cells["dcterms_temporal"].value.split("||"), temp, "<dcterms_temporal>" + temp + "</dcterms_temporal>\n")}}
+</dcterms_temporal>
+<dc_right type="array">
+{{forEach(cells["dc_right"].value.split("||"), rs, "<dc_right>" + rs + "</dc_right>\n")}}
+</dc_right>
+<dlg_local_right type="array">
+{{forEach(cells["dlg_local_right"].value.split("||"), lr, "<dlg_local_right>" + lr + "</dlg_local_right>\n")}}
+</dlg_local_right>
+<dcterms_contributor type="array">
+{{forEach(cells["dcterms_contributor"].value.split("||"), cont, "<dcterms_contributor>" + cont + "</dcterms_contributor>\n")}}
+</dcterms_contributor>
+<dcterms_spatial type="array">
+{{forEach(cells["dcterms_spatial"].value.split("||"), spa, "<dcterms_spatial>" + spa + "</dcterms_spatial>\n")}}
+</dcterms_spatial>
+<dcterms_bibliographic_citation type="array">
+{{forEach(cells["dcterms_bibliographic_citation"].value.split("||"), bc, "<dcterms_bibliographic_citation>" + bc + "</dcterms_bibliographic_citation>\n")}}
+</dcterms_bibliographic_citation>
+<dcterms_language type="array">
+{{forEach(cells["dcterms_language"].value.split("||"), lang, "<dcterms_language>" + lang + "</dcterms_language>\n")}}
+</dcterms_language>
+<dcterms_extent type="array">
+{{forEach(cells["dcterms_extent"].value.split("||"), ext, "<dcterms_extent>" + ext + "</dcterms_extent>\n")}}
+</dcterms_extent>
+<edm_is_shown_by type="array">
+{{forEach(cells["edm_is_shown_by"].value.split("||"), shownBy, "<edm_is_shown_by>" + shownBy + "</edm_is_shown_by>\n")}}
+</edm_is_shown_by>
+</item>
+
+### Row Separator:
+
+
+### Suffix:
+</items>
