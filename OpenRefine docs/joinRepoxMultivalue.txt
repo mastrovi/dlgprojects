@@ -1,0 +1,205 @@
+[
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_medium",
+    "columnName": "dcterms_medium",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_format",
+    "columnName": "dcterms_format",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dc_identifier",
+    "columnName": "dc_identifier",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column edm_is_shown_at",
+    "columnName": "edm_is_shown_at",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column slug",
+    "columnName": "slug",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column collection",
+    "columnName": "collection",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column public",
+    "columnName": "public",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column local",
+    "columnName": "local",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dpla",
+    "columnName": "dpla",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column portal",
+    "columnName": "portal",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dc_description",
+    "columnName": "dc_description",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dc_date",
+    "columnName": "dc_date",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_temporal",
+    "columnName": "dcterms_temporal",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_subject",
+    "columnName": "dcterms_subject",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_type",
+    "columnName": "dcterms_type",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_title",
+    "columnName": "dcterms_title",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_is_part_of",
+    "columnName": "dcterms_is_part_of",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dlg_local_right",
+    "columnName": "dlg_local_right",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dc_right",
+    "columnName": "dc_right",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_creator",
+    "columnName": "dcterms_creator",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_publisher",
+    "columnName": "dcterms_publisher",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_provenance",
+    "columnName": "dcterms_provenance",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_contributor",
+    "columnName": "dcterms_contributor",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_spatial",
+    "columnName": "dcterms_spatial",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_bibliographic_citation",
+    "columnName": "dcterms_bibliographic_citation",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dcterms_language",
+    "columnName": "dcterms_language",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
+
+]
