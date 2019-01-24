@@ -1,8 +1,8 @@
-### Prefix:
+Prefix:
 <?xml version='1.0' encoding='UTF-8'?>
 <items type="array">
 
-### Row Template:
+Row Template:
 <item>
 {{forEach(cells["slug"].value.split("||"), slug, "<slug>" + slug + "</slug>")}}
 <collection>
@@ -84,8 +84,8 @@
 </edm_is_shown_by>
 </item>
 
-### Row Separator:
+Row Separator:
 
 
-### Suffix:
+Suffix:
 </items>
