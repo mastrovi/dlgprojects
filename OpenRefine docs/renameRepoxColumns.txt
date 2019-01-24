@@ -2,7 +2,7 @@ Modify as needed and enter in the undo/redo apply box:
 [
   {
     "op": "core/column-rename",
-    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:language to dcterms_format",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format to dcterms_format",
     "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format",
     "newColumnName": "dcterms_format"
   }
