@@ -1,0 +1,93 @@
+Modify as needed and enter in the undo/redo apply box:
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:language to dcterms_format",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format",
+    "newColumnName": "dcterms_format"
+  }
+    {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:identifier to dc_identifier",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:identifier",
+    "newColumnName": "dc_identifier"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:description to dc_description",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:description",
+    "newColumnName": "dc_description"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:temporal to dcterms_temporal",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:temporal",
+    "newColumnName": "dcterms_temporal"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:subject to dcterms_subject",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:subject",
+    "newColumnName": "dcterms_subject"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:type to dcterms_type",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:type",
+    "newColumnName": "dcterms_type"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:title to dcterms_title",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:title",
+    "newColumnName": "dcterms_title"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:source to dcterms_is_part_of",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:source",
+    "newColumnName": "dcterms_is_part_of"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:rights to dlg_local_right",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:rights",
+    "newColumnName": "dlg_local_right"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:creator to dcterms_creator",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:creator",
+    "newColumnName": "dcterms_creator"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:publisher to dcterms_publisher",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:publisher",
+    "newColumnName": "dcterms_publisher"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:contributor to dcterms_contributor",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:contributor",
+    "newColumnName": "dcterms_contributor"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:spatial to dcterms_spatial",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:spatial",
+    "newColumnName": "dcterms_spatial"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:bibliographicCitation to dcterms_bibliographic_citation",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:bibliographicCitation",
+    "newColumnName": "dcterms_bibliographic_citation"
+  }
+ {
+    "op": "core/column-rename",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:language to dcterms_language",
+    "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:language",
+    "newColumnName": "dcterms_language"
+  }
+]
