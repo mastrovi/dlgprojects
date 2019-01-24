@@ -2,9 +2,9 @@ Modify as needed and enter in the undo/redo apply box:
 [
   {
     "op": "core/column-rename",
-    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format to dcterms_format",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format to dcterms_medium",
     "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dc:format",
-    "newColumnName": "dcterms_format"
+    "newColumnName": "dcterms_medium"
   }
     {
     "op": "core/column-rename",
@@ -20,9 +20,9 @@ Modify as needed and enter in the undo/redo apply box:
   }
  {
     "op": "core/column-rename",
-    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:temporal to dcterms_temporal",
+    "description": "Rename column repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:temporal to dc_date",
     "oldColumnName": "repox:record - repox:metadata - oai_qdc:qualifieddc - dcterms:temporal",
-    "newColumnName": "dcterms_temporal"
+    "newColumnName": "dc_date"
   }
  {
     "op": "core/column-rename",
