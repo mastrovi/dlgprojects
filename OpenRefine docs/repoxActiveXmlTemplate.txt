@@ -25,9 +25,9 @@ Row Template:
 <dc_identifer type="array">
 {{forEach(cells["dc_identifier"].value.split("||"), ident, "<dc_identifier>" + ident + "</dc_identifier>\n")}}
 </dc_identifer>
-<dcterms_format type="array">
-{{forEach(cells["dcterms_format"].value.split("||"), format, "<dcterms_format>" + format + "</dcterms_format>\n")}}
-</dcterms_format>
+<dc_format type="array">
+{{forEach(cells["dc_format"].value.split("||"), format, "<dc_format>" + format + "</dc_format>\n")}}
+</dc_format>
 <dcterms_medium type="array">
 {{forEach(cells["dcterms_medium"].value.split("||"), med, "<dcterms_medium>" + med + "</dcterms_medium>\n")}}
 </dcterms_medium>
