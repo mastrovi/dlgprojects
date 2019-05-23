@@ -19,6 +19,9 @@ Row Template:
 <dcterms_subject type="array">
 {{forEach(cells["dcterms_subject"].value.split("||"), sub, "<dcterms_subject>" + sub + "</dcterms_subject>\n")}}
 </dcterms_subject>
+<dlg_subject_personal type="array">
+{{forEach(cells["dlg_subject_personal"].value.split("||"), sub, "<dlg_subject_personal>" + sub + "</dlg_subject_personal\n")}}
+</dlg_subject_personal>
 <edm_is_shown_at type="array">
 {{forEach(cells["edm_is_shown_at"].value.split("||"), shownAt, "<edm_is_shown_at>" + shownAt + "</edm_is_shown_at>\n")}}
 </edm_is_shown_at>
