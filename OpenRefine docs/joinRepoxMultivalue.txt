@@ -105,6 +105,14 @@
     "keyColumnName": "repox:record - id",
     "separator": "||"
   }
+  
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column dlg_subject_personal",
+    "columnName": "dlg_subject_personal",
+    "keyColumnName": "repox:record - id",
+    "separator": "||"
+  }
 
   {
     "op": "core/multivalued-cell-join",
