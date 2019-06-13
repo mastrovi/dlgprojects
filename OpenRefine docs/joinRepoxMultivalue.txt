@@ -8,8 +8,8 @@
   }
   {
     "op": "core/multivalued-cell-join",
-    "description": "Join multi-valued cells in column dcterms_format",
-    "columnName": "dcterms_format",
+    "description": "Join multi-valued cells in column dc_format",
+    "columnName": "dc_format",
     "keyColumnName": "repox:record - id",
     "separator": "||"
   }
