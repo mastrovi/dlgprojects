@@ -1,0 +1,175 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - id to id",
+    "oldColumnName": "item - id",
+    "newColumnName": "id"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dpla to dpla",
+    "oldColumnName": "item - dpla",
+    "newColumnName": "dpla"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - slug to slug",
+    "oldColumnName": "item - slug",
+    "newColumnName": "slug"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - local to local",
+    "oldColumnName": "item - local",
+    "newColumnName": "local"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - public to public",
+    "oldColumnName": "item - public",
+    "newColumnName": "public"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - portal to portal",
+    "oldColumnName": "item - portal",
+    "newColumnName": "portal"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dc_date to dc_date",
+    "oldColumnName": "item - dc_date",
+    "newColumnName": "dc_date"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dc_right to dc_right",
+    "oldColumnName": "item - dc_right",
+    "newColumnName": "dc_right"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dc_format to dc_format",
+    "oldColumnName": "item - dc_format",
+    "newColumnName": "dc_format"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - collection to collection",
+    "oldColumnName": "item - collection",
+    "newColumnName": "collection"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_type to dcterms_type",
+    "oldColumnName": "item - dcterms_type",
+    "newColumnName": "dcterms_type"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_title to dcterms_title",
+    "oldColumnName": "item - dcterms_title",
+    "newColumnName": "dcterms_title"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_medium to dcterms_medium",
+    "oldColumnName": "item - dcterms_medium",
+    "newColumnName": "dcterms_medium"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_subject to dcterms_subject",
+    "oldColumnName": "item - dcterms_subject",
+    "newColumnName": "dcterms_subject"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - edm_is_shown_at to edm_is_shown_at",
+    "oldColumnName": "item - edm_is_shown_at",
+    "newColumnName": "edm_is_shown_at"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - edm_is_shown_by to edm_is_shown_by",
+    "oldColumnName": "item - edm_is_shown_by",
+    "newColumnName": "edm_is_shown_by"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_spatial to dcterms_spatial",
+    "oldColumnName": "item - dcterms_spatial",
+    "newColumnName": "dcterms_spatial"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_provenance to dcterms_provenance",
+    "oldColumnName": "item - dcterms_provenance",
+    "newColumnName": "dcterms_provenance"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_extent to dcterms_extent",
+    "oldColumnName": "item - dcterms_extent",
+    "newColumnName": "dcterms_extent"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column item - dcterms_extent - nil",
+    "columnName": "item - dcterms_extent - nil"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_language to dcterms_language",
+    "oldColumnName": "item - dcterms_language",
+    "newColumnName": "dcterms_language"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dlg_subject_personal to dlg_subject_personal",
+    "oldColumnName": "item - dlg_subject_personal",
+    "newColumnName": "dlg_subject_personal"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_is_part_of to dcterms_is_part_of",
+    "oldColumnName": "item - dcterms_is_part_of",
+    "newColumnName": "dcterms_is_part_of"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_publisher to dcterms_publisher",
+    "oldColumnName": "item - dcterms_publisher",
+    "newColumnName": "dcterms_publisher"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_description to dcterms_description",
+    "oldColumnName": "item - dcterms_description",
+    "newColumnName": "dcterms_description"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_creator to dcterms_creator",
+    "oldColumnName": "item - dcterms_creator",
+    "newColumnName": "dcterms_creator"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_bibliographic_citation to dcterms_bibliographic_citation",
+    "oldColumnName": "item - dcterms_bibliographic_citation",
+    "newColumnName": "dcterms_bibliographic_citation"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dc_relation to dc_relation",
+    "oldColumnName": "item - dc_relation",
+    "newColumnName": "dc_relation"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column item - dcterms_contributor to dcterms_contributor",
+    "oldColumnName": "item - dcterms_contributor",
+    "newColumnName": "dcterms_contributor"
+  }
+]
